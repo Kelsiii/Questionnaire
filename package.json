@@ -1,7 +1,7 @@
 {
-    "name": "questionair",
+    "name": "questionnaire",
     "version": "0.0.1",
-    "description": "Questionnair",
+    "description": "Questionnaire",
     "main": "app.js",
     "repository": {
         "type": "git",
