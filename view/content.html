@@ -1,0 +1,945 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>南京大学研究生学术诚信教育问卷</title>
+
+    <!---CDN Links-->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+        .sc-tabs .nav-tabs {
+            margin-bottom: 15px;
+        }
+        
+        .sc-tabs label {
+            margin-bottom: 10px;
+        }
+        
+        .footer {
+            border-top: 1px solid #eee;
+            padding-top: 9px;
+            margin: 40px 0 20px;
+            color: #c5c5c5
+        }
+        
+        #true-false .radio-inline {
+            margin-right: 2em
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>南京大学研究生学术诚信教育问卷</h1>
+
+        <!-- Nav tabs -->
+        <div class="sc sc-tabs" data-example-id="togglable-tabs">
+
+            <ul class="nav nav-tabs " role="tablist" id="myTabs">
+                <li role="presentation" aria-controls="single-choice" class="active"><a href="#single-choice" aria-controls="single-choice" role="tab" data-toggle="tab">单项选择题</a></li>
+                <li role="presentation" aria-controls="multiple-choice"><a href="#multiple-choice" aria-controls="multiple-choice" role="tab" data-toggle="tab">多项选择题</a></li>
+                <li role="presentation" aria-controls="true-false"><a href="#true-false" aria-controls="true-false" role="tab" data-toggle="tab">判断题</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="single-choice">
+                    <form>
+                        <ol>
+                            <li for="single-choice" id="single-1">
+                                <p>本管理办法适用于我校（ ）的科学研究活动。</p>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="radios1"  value="A">
+                                        教职工
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="radios1"  value="B">
+                                        学生
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="radios1" value="C">
+                                        教职工和学生
+                                    </label>
+                                </div>
+                            </li>
+
+                            <li for="single-choice" id="single-2">
+                                <p>将他人的学术观点、思想、成果冒充为自己所创是否属于学术侵占、剽窃、抄袭行为。</p>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="radios2" value="A">
+                                            是
+                                        </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                            <input type="radio" name="radios2"  value="B">
+                                            否
+                                        </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                            <input type="radio" name="radios2" value="C">
+                                            无法判断
+                                        </label>
+                                </div>
+                            </li>
+
+                            <li for="single-choice" id="single-3">
+                                <p>将他人已发表或未发表的作品，作为自己的研究成果使用是否属于学术侵占、剽窃、抄袭行为。</p>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="radios3" value="A">
+                                            是
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="radios3"  value="B">
+                                        否
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="radios3" value="C">
+                                        无法判断
+                                    </label>
+                                </div>
+                            </li>
+
+                            <li for="single-choice" id="single-4">
+                                <p>下列不属于采用不正当手段干扰和妨碍他人研究活动的行为的是</p>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="radios4" value="A">
+                                        故意毁坏或扣压他人研究活动中必需的仪器设备、文献资料以及其他与科研有关的财物                                        
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="radios4"  value="B">
+                                        故意拖延对他人项目或成果的审查、评价时间，或提出无法证明的论断
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="radios4" value="C">
+                                        遵循正当程序对竞争项目或结果进行审查
+                                    </label>
+                                </div>
+                            </li>
+
+                            <li for="single-choice" id="single-5">
+                                <p>以下获取和使用科研资源的行为中应当禁止的是</p>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="radios5" value="A">
+                                        编造、夸大经费预算、研究计划、预期目标、研究成果的学术价值、经济与社会效益等骗取经费、装备和其他支持条件等科研资源                                        
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="radios5"  value="B">
+                                        滥用科研资源，用科研资源谋取不正当利益
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="radios5" value="C">
+                                        以上都是
+                                    </label>
+                                </div>
+                            </li>
+
+                            <li for="single-choice" id="single-6">
+                                <p>以下发表个人科研成果的行为符合科学研究行为规范的是</p>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="radios6" value="A">
+                                        在公开出版的报纸、刊物上一稿多发                                        
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="radios6"  value="B">
+                                        在公开出版的报纸、刊物上简单重复发表自己的科研成果
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="radios6" value="C">
+                                        在公开出版的报纸、刊物上另有约定再次发表时，征求版权所有者的许可，并注明出处
+                                    </label>
+                                </div>
+                            </li>
+
+                            <li for="single-choice" id="single-7">
+                                <p>在科研成果公布、课题申报、项目设计、数据资料的采集与分析、科研工作参与人员的贡献确认等方面，应该遵守（ ）原则。</p>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="radios7" value="A">
+                                        科学合理                                        
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="radios7"  value="B">
+                                        诚实客观
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="radios7" value="C">
+                                        公平公正
+                                    </label>
+                                </div>
+                            </li>
+
+                            <li for="single-choice" id="single-8">
+                                <p>在研究、调查、出版、向媒体发布、提供材料与设施、同行评议、聘用和提职等活动中可能发生利益冲突时，所有有关人员应当遵守（ ）。</p>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="radios8" value="A">
+                                        审慎原则                                        
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="radios8"  value="B">
+                                        透明原则
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="radios8" value="C">
+                                        声明与回避原则
+                                    </label>
+                                </div>
+                            </li>
+
+                            <li for="single-choice" id="single-9">
+                                <p>工作机构在收到有关举报材料后，应予以登记并及时向学校主管领导报告，并自收到举报材料或获悉有关报道之日起（ ）个工作日内，做出是否予以立案的决定。工作机构在做出是否予以立案的决定后，应及时通知署名的举报人或相关媒体。</p>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="radios9" value="A">
+                                        10                                        
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="radios9"  value="B">
+                                        15
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="radios9" value="C">
+                                        30
+                                    </label>
+                                </div>
+                            </li>
+
+                            <li for="single-choice" id="single-10">
+                                <p>自工作机构提交调查报告之日起（ ）内，校学术委员会应召开全体会议，并应涉嫌行为人的要求举行听证。听证的程序和具体规定，由校学术委员会另行制定。</p>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="radios10" value="A">
+                                        一个月                                        
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="radios10" value="B">
+                                        两个月
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="radios10" value="C">
+                                        三个月
+                                    </label>
+                                </div>
+                            </li>
+
+                        </ol>
+                    </form>
+
+                    <center>
+                        <a class="btn btn-default btn-primary text-center" href="javascript:;" id="btn-to-multiple" role="button">下一部分</a>
+                    </center>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="multiple-choice">
+                    <form>
+                        <ol>
+                            <li for="multiple-choice" id="multiple-1">
+                                <p>我校根据《中华人民共和国著作权法》和教育部的有关规定制定《南京大学科学研究行为规范与学风建设管理办法（试行）》旨在（ ）。</p>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="A">
+                                        进一步弘扬我校“严谨、求实、勤奋、创新”的优良学风
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="B" >
+                                        引导全校教职工和学生遵守科学研究道德
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="C" >
+                                        繁荣发展我校的科学研究
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="D" >
+                                        保护知识产权
+                                    </label>
+                                </div>
+                            </li>
+
+                            <li for="multiple-choice" id="multiple-2">
+                                <p>下列属于侵占、剽窃、抄袭行为的有（ ）。</p>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="A">
+                                        将他人的学术观点、思想、成果冒充为自己所创
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="B" >
+                                        将他人已发表或未发表的作品，作为自己的研究成果使用
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="C" >
+                                        引用他人成果时故意篡改内容、数据或观测结果等
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="D" >
+                                        擅自使用在各类同行评议、评审活动或其他途径中获得的具有原创性质的学术信息、研究计划、学术思想等，未经授权将上述信息发表或者透露给第三者
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="E" >
+                                        其他侵占、剽窃、抄袭行为
+                                    </label>
+                                </div>
+                            </li>
+
+                            <li for="multiple-choice" id="multiple-3">
+                                <p>在各类项目申请、成果发表与申报中应当禁止的行为有（ ）。</p>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="A">
+                                        故意作出虚假或错误的陈述
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="B" >
+                                        提供虚假的文献引用证明
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="C" >
+                                        捏造数据或结果
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="D" >
+                                        保持原始数据的完整性
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="E" >
+                                        篡改实验记录和图片
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="F" >
+                                        片面选取符合自己设想的研究结果
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="G" >
+                                        舍弃与设想矛盾的研究结果
+                                    </label>
+                                </div>
+                            </li>
+
+                            <li for="multiple-choice" id="multiple-4">
+                                <p>下列行为中不符合学术规范的有（ ）。</p>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="A">
+                                        以任何方式伪造学术经历与学术成果
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="B" >
+                                        伪造专家鉴定、证书及其他学术能力的证明材料
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="C" >
+                                        出版科研成果如实注明著、编著、编、译著、译、编译
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="D" >
+                                        在学术成果介绍材料中擅自改变作品性质
+                                    </label>
+                                </div>
+                            </li>
+
+                            <li for="multiple-choice" id="multiple-5">
+                                <p>在科研成果公布、课题申报、项目设计、数据资料的采集与分析、科研工作参与人员的贡献确认等方面，遵守诚实客观原则的，要求（ ）。</p>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="A">
+                                        在未作贡献的科研成果中署名
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="B" >
+                                        合作作品中署名位次必须符合自己的实际贡献
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="C" >
+                                        合作作品所有署名人均应对作品承担相应责任
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="D" >
+                                        对无法体现作者贡献的多人署名，要加以特别说明
+                                    </label>
+                                </div>
+                            </li>
+
+                            <li for="multiple-choice" id="multiple-6">
+                                <p>在涉及人体的研究中，如在人体上进行研究、用人体细胞或组织器官等进行的实验和根据人体研究数据所进行的研究等，必须（ ）。</p>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="A">
+                                        遵守现行的国家法律法规和伦理道德要求
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="B" >
+                                        遵循受试人信息透明化原则
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="C" >
+                                        保护受试人的合法权益和个人隐私
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="D" >
+                                        保障其知情同意权
+                                    </label>
+                                </div>
+                            </li>
+
+                            <li for="multiple-choice" id="multiple-7">
+                                <p>以下属于参与或与他人合谋隐匿学术劣迹的行为有（ ）。</p>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="A">
+                                        检举他人的学术造假
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="B" >
+                                        与他人合谋隐藏其不端行为
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="C" >
+                                        监察失职
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="D" >
+                                        对投诉人打击报复
+                                    </label>
+                                </div>
+                            </li>
+
+                            <li for="multiple-choice" id="multiple-8">
+                                <p>对违反本管理办法的教职工，由校学术委员会根据其情节、后果等因素，向相关部门、机构建议给予的处分或处理包括（ ）。</p>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="A">
+                                        训诫或者警告、记过、记大过、降级、撤职、开除等行政处分
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="B" >
+                                        撤销学术职务
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="C" >
+                                        撤销研究项目并追回研究经费
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="D" >
+                                        暂缓申报高一级专业技术职务任职资格（包括研究生指导教师资格）
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="E" >
+                                        取消已有的专业技术职务资格（包括取消或暂停研究生指导教师资格）以及相应的工资福利待遇
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="F" >
+                                        解除聘任
+                                    </label>
+                                </div>
+                            </li>
+
+                            <li for="multiple-choice" id="multiple-9">
+                                <p>对违反本管理办法的学生，由校学术委员会根据其情节、后果等因素，向相关部门、机构建议给予的处分或处理包括：（ ）。</p>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="A">
+                                        通报批评或警告、记过、记大过、留校察看、开除学籍
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="B" >
+                                        暂缓论文答辩
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="C" >
+                                        取消申请学士、硕士、博士学位论文答辩资格
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="D" >
+                                        取消学士、硕士、博士学位
+                                    </label>
+                                </div>
+                            </li>
+
+                            <li for="multiple-choice" id="multiple-10">
+                                <p>学位论文被认定为有违反本管理办法行为的研究生指导教师负有连带责任的，根据情节、后果等因素，建议校学位评定委员会或其他相关职能部门给予的处理或处分包括：（ ）。</p>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="A">
+                                        暂停研究生指导教师资格
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="B" >
+                                        取消研究生指导教师资格
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="C" >
+                                        解除聘任
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="D" >
+                                        警告、记过、记大过、降级或撤职
+                                    </label>
+                                </div>
+                            </li>
+
+                        </ol>
+                    </form>
+                    <center>
+                        <a class="btn btn-default btn-primary text-center" href="javascript:;" id="btn-to-judgement" role="button">下一部分</a>
+                    </center>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="true-false">
+                    <form class="form-inline">
+                        <ol>
+                            <li for="true-false" id="judgement-1">
+                                <p>在各类项目申请、成果发表与申报中应作出真实、正确的陈述，提供真实的文献引用证明，保证数据或结果真实，保持原始数据的完整性。</p>
+                                <label class="radio-inline">
+                                        <input type="radio" name="judgement1" value="T"> 正确
+                                    </label>
+                                <label class="radio-inline">
+                                        <input type="radio" name="judgement1" value="F"> 错误
+                                    </label>
+                            </li>
+
+                            <li for="true-false" id="judgement-2">
+                                <p>搜集、发表数据要确保有效性和准确性，可以根据需要篡改实验记录和图片，捏造数据或结果。</p>
+                                <label class="radio-inline">
+                                        <input type="radio" name="judgement2"  value="T"> 正确
+                                    </label>
+                                <label class="radio-inline">
+                                        <input type="radio" name="judgement2" value="F"> 错误
+                                    </label>
+                            </li>
+
+                            <li for="true-false" id="judgement-3">
+                                <p>可以在公开出版的报纸、刊物上一稿多发，或简单重复发表自己的科研成果。</p>
+                                <label class="radio-inline">
+                                        <input type="radio" name="judgement3"  value="T"> 正确
+                                    </label>
+                                <label class="radio-inline">
+                                        <input type="radio" name="judgement3" value="F"> 错误
+                                    </label>
+                            </li>
+
+                            <li for="true-false" id="judgement-4">
+                                <p>科学研究活动应遵守学术论著引文标准。</p>
+                                <label class="radio-inline">
+                                        <input type="radio" name="judgement4"  value="T"> 正确
+                                    </label>
+                                <label class="radio-inline">
+                                        <input type="radio" name="judgement4" value="F"> 错误
+                                    </label>
+                            </li>
+
+                            <li for="true-false" id="judgement-5">
+                                <p>科学研究活动中在引用他人成果时，可以不标注作者与具体出处。</p>
+                                <label class="radio-inline">
+                                    <input type="radio" name="judgement5"  value="T"> 正确
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="judgement5" value="F"> 错误
+                                </label>
+                            </li>
+
+                            <li for="true-false" id="judgement-6">
+                                <p>我校教师和科研人员在参与各种推荐、鉴定、答辩、项目评审、机构评估、出版物或研究报告审阅、奖项评定时，评审意见以直接或间接的方式反馈给被评价者。</p>
+                                <label class="radio-inline">
+                                    <input type="radio" name="judgement6"  value="T"> 正确
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="judgement6" value="F"> 错误
+                                </label>
+                            </li>
+
+                            <li for="true-false" id="judgement-7">
+                                <p>我校教师和科研人员在参与各种推荐、鉴定、答辩、项目评审、机构评估、出版物或研究报告审阅、奖项评定时，评审者禁止直接或者间接地收受被评审单位或个人的佣金、报酬、礼品以及其他任何物质性或非物质性的好处。</p>
+                                <label class="radio-inline">
+                                    <input type="radio" name="judgement7"  value="T"> 正确
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="judgement7" value="F"> 错误
+                                </label>
+                            </li>
+
+                            <li for="true-false" id="judgement-8">
+                                <p>教职工和学生在科学研究活动中应依照国家法律、法规的规定，保守有关秘密。</p>
+                                <label class="radio-inline">
+                                    <input type="radio" name="judgement8"  value="T"> 正确
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="judgement8" value="F"> 错误
+                                </label>
+                            </li>
+
+                            <li for="true-false" id="judgement-9">
+                                <p>我校教职工、学生应自觉抵制一切违反科学道德的研究活动，如发现研究活动存在弊端或危害，应自觉暂缓或调整，甚至终止，并向该研究的主管部门通告。</p>
+                                <label class="radio-inline">
+                                    <input type="radio" name="judgement9"  value="T"> 正确
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="judgement9" value="F"> 错误
+                                </label>
+                            </li>
+
+                            <li for="true-false" id="judgement-10">
+                                <p>南京大学学术委员会负责理工农医科类和人文社科类教职工科学研究活动实施本管理办法的具体工作。</p>
+                                <label class="radio-inline">
+                                    <input type="radio" name="judgement10"  value="T"> 正确
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="judgement10" value="F"> 错误
+                                </label>
+                            </li>
+
+                            <li for="true-false" id="judgement-11">
+                                <p>学校科学技术处、社会科学处是我校科学研究行为规范与学风建设的主管机构，负责有关规范的制定、违反规范的认定和查处，并有权建议相关职能部门或机构对违反本管理办法的行为人做出相应的处理。</p>
+                                <label class="radio-inline">
+                                    <input type="radio" name="judgement11"  value="T"> 正确
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="judgement11" value="F"> 错误
+                                </label>
+                            </li>
+
+                            <li for="true-false" id="judgement-12">
+                                <p>学校研究生院、教务处及学工部门代为受理学生科学研究活动中违反本管理办法的相关工作，并向校学术委员会工作机构提交相关材料。</p>
+                                <label class="radio-inline">
+                                    <input type="radio" name="judgement12"  value="T"> 正确
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="judgement12" value="F"> 错误
+                                </label>
+                            </li>
+
+                            <li for="true-false" id="judgement-13">
+                                <p>校学术委员会在对我校教职工和学生涉嫌违反本管理办法的行为进行调查、认定、处理时，根据需要，可聘请校内外相关专家组成专家组。</p>
+                                <label class="radio-inline">
+                                    <input type="radio" name="judgement13"  value="T"> 正确
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="judgement13" value="F"> 错误
+                                </label>
+                            </li>
+
+                            <li for="true-false" id="judgement-14">
+                                <p>只有我校学生可以就我校教职工和学生涉嫌在科学研究中违反本管理办法的行为，向校学术委员会、学位评定委员会或相关部门、院系举报。</p>
+                                <label class="radio-inline">
+                                    <input type="radio" name="judgement14"  value="T"> 正确
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="judgement14" value="F"> 错误
+                                </label>
+                            </li>
+
+                            <li for="true-false" id="judgement-15">
+                                <p>对于在报刊杂志、电视、广播以及互联网络等媒体上公开检举或报道的我校人员涉嫌违反学术规范的行为，工作机构在获悉后应积极主动地展开调查核实工作。</p>
+                                <label class="radio-inline">
+                                    <input type="radio" name="judgement15"  value="T"> 正确
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="judgement15" value="F"> 错误
+                                </label>
+                            </li>
+
+                            <li for="true-false" id="judgement-16">
+                                <p>在收到有关我校人员涉嫌违反学术规范行为的举报，并做出立案决定后，工作机构应组织调查取证。自立案之日起一周内，工作机构应向校学术委员会提交调查报告，并提出处理建议。</p>
+                                <label class="radio-inline">
+                                    <input type="radio" name="judgement16"  value="T"> 正确
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="judgement16" value="F"> 错误
+                                </label>
+                            </li>
+
+                            <li for="true-false" id="judgement-17">
+                                <p>在调查我校人员涉嫌违反学术规范行为时，校学术委员会在应涉嫌行为人要求举行听证，完成听证程序结束后，应根据国家法律、法规及教育部有关规定和本管理办法的规定，对涉嫌行为人的行为做出认定或处理建议。认定和处理建议应经出席会议的学术委员会委员二分之一人数通过。</p>
+                                <label class="radio-inline">
+                                    <input type="radio" name="judgement17"  value="T"> 正确
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="judgement17" value="F"> 错误
+                                </label>
+                            </li>
+
+                            <li for="true-false" id="judgement-18">
+                                <p>校学术委员会委员本人嫌涉违反行为规范，或与涉嫌行为人有亲属关系、直接师生关系，或有其他应当回避的情形时，应主动回避。</p>
+                                <label class="radio-inline">
+                                    <input type="radio" name="judgement18"  value="T"> 正确
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="judgement18" value="F"> 错误
+                                </label>
+                            </li>
+
+                            <li for="true-false" id="judgement-19">
+                                <p>违反《中华人民共和国著作权法》等法律法规的，行为人承担相关法律责任，如需要追究党纪责任的，由学校纪委依据相关规定处理。</p>
+                                <label class="radio-inline">
+                                    <input type="radio" name="judgement19"  value="T"> 正确
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="judgement19" value="F"> 错误
+                                </label>
+                            </li>
+
+                            <li for="true-false" id="judgement-20">
+                                <p>由校学术委员会建议、校学位评定委员会决定暂停研究生指导教师资格的教师，可以招收新研究生。</p>
+                                <label class="radio-inline">
+                                    <input type="radio" name="judgement20"  value="T"> 正确
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="judgement20" value="F"> 错误
+                                </label>
+                            </li>
+
+                        </ol>
+                    </form>
+
+                    <center>
+                        <a class="btn btn-default btn-primary text-center" href="javascript:;" id="submit-btn" role="button">提交问卷</a>
+                    </center>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <center>
+                <p>南京大学</p>
+            </center>
+        </div>
+    </div>
+
+
+
+</body>
+
+<script type="text/javascript">
+    function checkFilled(groupName) {
+        var container = $('.tab-content'),
+            scrollTo = null;
+
+        var arr = $.makeArray($("li[for='" + groupName + "']"));
+        filled = true;
+        $.each(arr, function(index, element) {
+            if ($(this).find("input:checked").length == 0) {
+                if (scrollTo == null) {
+                    scrollTo = $(this)
+                }
+                $(this).css("color", "red")
+                filled = false
+            } else {
+                $(this).css("color", "#333")
+            }
+        })
+        if (scrollTo != null) {
+            //console.log($('#myTabs a[href="#' + groupName + '"]'))
+            $('#myTabs a[href="#' + groupName + '"]').tab('show')
+            $('html, body').animate({
+                scrollTop: scrollTo.offset().top
+            }, 250);
+
+        }
+        return filled;
+    }
+
+    function getRadioValue(groupName) {
+        var radioSelected = []
+        var arr = $.makeArray($("li[for='" + groupName + "']"));
+        $.each(arr, function(index, element) {
+            elementid = $(this)[0].id
+            if ($(this).find("input[type='radio']:checked").length == 0) {
+                radioSelected.push("")
+            } else
+                radioSelected.push($(this).find("input[type='radio']:checked").val())
+        })
+        return radioSelected
+    }
+
+    function getCheckboxSelected(groupName) {
+        var checked = []
+        var arr = $.makeArray($("li[for='" + groupName + "']"));
+        $.each(arr, function(index, element) {
+            elementid = $(this)[0].id
+            if ($(this).find("input[type='checkbox']:checked").length == 0) {
+                checked.push('')
+            } else {
+                var temp = ''
+                $(this).find("input[type='checkbox']:checked").each(function() {
+                    temp = temp + $(this).val();
+                });
+                checked.push(temp)
+            }
+        })
+        return checked
+
+    }
+
+
+    $("#submit-btn").click(function() {
+        if (checkFilled("single-choice") && checkFilled("multiple-choice") && checkFilled("true-false")) {
+            single_answer = getRadioValue("single-choice")
+            multiple_answer = getCheckboxSelected("multiple-choice")
+            judgement_answer = getRadioValue("true-false")
+            $.ajax({
+                url: "/submit",
+                type: "post",
+                contentType: "application/json",
+                data: JSON.stringify({
+                    "single": single_answer,
+                    "multiple": multiple_answer,
+                    "judgement": judgement_answer
+                })
+            }).done(function(res) {
+                alert("你的得分为：" + res + "分")
+                window.location.href = '/';
+            });
+        }
+
+    })
+
+    $("#btn-to-multiple").click(function() {
+        if (checkFilled("single-choice")) {
+            $('#myTabs a[href="#multiple-choice"]').tab('show')
+            $("html, body").animate({
+                scrollTop: 0
+            }, {
+                duration: 250,
+                easing: "swing"
+            });
+        }
+    });
+
+    $("#btn-to-judgement").click(function() {
+        if (checkFilled("multiple-choice")) {
+            $('#myTabs a[href="#true-false"]').tab('show')
+            $("html, body").animate({
+                scrollTop: 0
+            }, {
+                duration: 250,
+                easing: "swing"
+            });
+        }
+    })
+</script>
+
+
+</html>
