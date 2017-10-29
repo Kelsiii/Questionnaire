@@ -12,21 +12,37 @@
     <!---CDN Links-->
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker3.min.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="http://grazzh.nju.edu.cn/Questionnaire/css/dragtable.css">
+
 
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+    <script src="http://grazzh.nju.edu.cn/Questionnaire/scripts/tableExport/tableExport.js"></script>
+    <script src="http://grazzh.nju.edu.cn/Questionnaire/scripts/moment/moment.js"></script>
+
+
     <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/extensions/export/bootstrap-table-export.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/extensions/reorder-columns/bootstrap-table-reorder-columns.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap-datepicker/1.7.1/locales/bootstrap-datepicker.zh-CN.min.js"></script>
 
-
-    <script src="/tableExport/tableExport.js"></script>
-    <script src="/moment/moment.js"></script>
+    <script src="http://grazzh.nju.edu.cn/Questionnaire/scripts/dragtable/jquery.dragtable.js"></script>
 
     <style>
         .fixed-table-pagination {
             padding: 0 10px
+        }
+        
+        .input-daterange {
+            width: auto
         }
     </style>
 
@@ -49,8 +65,14 @@
                 <select id="score-filter" class="form-control">
                     <option value="all">All</option>
                     <option value="not_pass">未满100</option>
-                    <option value="unfilled">未答题</option>
+                    <option value="full_mark">100</option>
                 </select>
+
+                <div class="input-group input-daterange">
+                    <input type="text" class="form-control date-range" id="date-from">
+                    <div class="input-group-addon">to</div>
+                    <input type="text" class="form-control date-range" id="date-to">
+                </div>
 
 
             </form>
@@ -67,13 +89,34 @@
         oTable.Init();
 
         DepartmentSelectInit();
+        DateSelectorInit();
 
     });
 
+    var times = new Date();
+    times.setTime(times.getTime() - 1000 * 60 * 60 * 24 * 30); // *30天前的日期
+
     var filter = {
         department: "all",
-        score: "all"
+        score: "all",
+        date_from: dateFormat(times),
+        date_to: dateFormat(new Date())
     }
+
+    $(".date-range").change(function() {
+        filter.date_from = $("#date-from").val();
+        filter.date_to = $("#date-to").val();
+        $.ajax({
+            url: "http://grazzh.nju.edu.cn/Questionnaire/getScores",
+            type: "post",
+            contentType: "application/json",
+            data: JSON.stringify({
+                "filter": filter
+            })
+        }).done(function(res) {
+            $('#tb_scores').bootstrapTable('load', res);
+        });
+    })
 
     $('#department-list').change(function() {
         var department = $(this).val()
@@ -81,7 +124,7 @@
         filter.department = department;
 
         $.ajax({
-            url: "/getScores",
+            url: "http://grazzh.nju.edu.cn/Questionnaire/getScores",
             type: "post",
             contentType: "application/json",
             data: JSON.stringify({
@@ -98,7 +141,7 @@
         var score_filter = $(this).val()
         filter.score = score_filter;
         $.ajax({
-            url: "/getScores",
+            url: "http://grazzh.nju.edu.cn/Questionnaire/getScores",
             type: "post",
             contentType: "application/json",
             data: JSON.stringify({
@@ -113,7 +156,7 @@
 
     function DepartmentSelectInit() {
         $.ajax({
-            url: "/getDepartments",
+            url: "http://grazzh.nju.edu.cn/Questionnaire/getDepartments",
             type: "get",
             contentType: "application/json"
         }).done(function(res) {
@@ -123,6 +166,28 @@
         });
     }
 
+    function DateSelectorInit() {
+        $('.input-daterange').datepicker({
+            format: 'yyyy-mm-dd'
+        });
+
+
+        $("#date-from").val(dateFormat(times));
+        $("#date-to").val(dateFormat(new Date()))
+    }
+
+    function dateFormat(times) {
+        var strYear = times.getFullYear();
+        var strMon = times.getMonth() + 1;
+        if (strMon < 10) {
+            strMon = "0" + strMon.toString();
+        };
+        var strDate = times.getDate();
+        if (strDate < 10) {
+            strDate = "0" + strDate.toString();
+        };
+        return strYear + "-" + strMon + "-" + strDate;
+    }
 
     var TableInit = function() {
         var oTableInit = new Object();
@@ -130,43 +195,70 @@
 
         oTableInit.Init = function() {
             $("#tb_scores").bootstrapTable({
-                url: '/getAllScores', //url获取数据 
+                url: 'http://grazzh.nju.edu.cn/Questionnaire/getAllScores', //url获取数据 
                 method: 'get', //方法 
                 cache: false, //缓存 
                 pagination: true, //分页 
                 sidePagination: 'client', //指定在前端客户端分页 
                 pageNumber: 1, //页号 
                 pageSize: 10, //页面数据条数 
-                pageList: [10, 20, 30, 40, 50], //分页列表 
+                pageList: [10, 20, 50, 100, 500], //分页列表 
                 uniqueId: '_id', //唯一id 
                 toolbar: '#toolbar', //工具栏 
                 showRefresh: true, //显示刷新按钮 
                 showExport: true, //是否显示导出
-                exportDataType: "all", //basic', 'all', 'selected'.
+                exportDataType: "selected", //basic', 'all', 'selected'.
+                clickToSelect: true, //是否启用点击选中行
                 search: true, //显示搜索框 
                 columnDefs: [{
                     //设置不参与搜索的列
-                    "targets": [0, 1, 5],
+                    "targets": [0, 5],
                     "searchable": false
                 }],
                 sortName: "submit_time",
                 sortOrder: "desc",
                 striped: true, //是否显示行间隔色
                 columns: [{
+                    title: "全选",
+                    field: "select",
+                    checkbox: true,
+                    width: 20, //宽度
+                    align: "center", //水平
+                    valign: "middle" //垂直
+                }, {
                     field: 'studentId',
                     title: '学号'
                 }, {
                     field: 'studentName',
-                    title: '姓名'
+                    title: '姓名',
+                    formatter: function(value, row, index) {
+                        if (value == null)
+                            return "缺失"
+                        else
+                            return value
+                    }
                 }, {
                     field: 'department',
-                    title: '院系'
+                    title: '院系',
+                    formatter: function(value, row, index) {
+                        if (value == null)
+                            return "缺失"
+                        else
+                            return value
+                    }
                 }, {
                     field: 'major',
-                    title: '专业'
+                    title: '专业',
+                    formatter: function(value, row, index) {
+                        if (value == null)
+                            return "缺失"
+                        else
+                            return value
+                    }
                 }, {
                     field: 'score_total',
-                    title: '成绩'
+                    title: '成绩',
+                    sortable: true
                 }, {
                     field: 'submit_time',
                     title: '提交时间',
@@ -175,7 +267,8 @@
                             return moment(value).format('YYYY-MM-DD HH:mm:ss');
                         else
                             return "-"
-                    }
+                    },
+                    sortable: true
                 }],
                 locale: 'zh-CN', //中文支持,
                 responseHandler: function(res) {
