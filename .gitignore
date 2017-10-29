@@ -27,3 +27,7 @@ nbdist/
 .DS_Store
 
 application.properties
+dragtable/
+dragtable.css
+moment/
+tableExport/
