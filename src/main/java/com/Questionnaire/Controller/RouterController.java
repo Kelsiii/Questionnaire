@@ -21,4 +21,9 @@ public class RouterController {
     public String admin() {
         return "admin.html";
     }
+	
+	@RequestMapping("/w")
+    public String warn() {
+        return "warn.html";
+    }
 }

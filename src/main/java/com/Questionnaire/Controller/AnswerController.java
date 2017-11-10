@@ -36,11 +36,11 @@ public class AnswerController {
 				+ ',' + StringUtils.collectionToDelimitedString(part3, ",");
 		
 		
-		String[] answer_part1 = {"C", "A", "A", "C", "C", "C", "B", "B", "A", "A"};
-		String[] answer_part2 = {"ABCD", "ABDE", "ABCEFG", "ABD", "BCD", "ACD", "BCD", "ABCDEF",
-				"ABCD", "AD"};
-        String[] answer_part3 ={"T", "F", "T", "T", "F", "T", "T", "T", "T", "T",
-        		"T", "T", "T", "F", "T", "F", "T", "T", "T", "F"};
+		String[] answer_part1 = {"C", "A", "A", "C", "C", "C", "B", "C", "A", "A"};
+		String[] answer_part2 = {"ABCD", "ABCDE", "ABCEFG", "ABD", "BCD", "ACD", "BCD", "ABCDEF",
+				"ABCD", "ABD"};
+        String[] answer_part3 ={"T", "F", "F", "T", "F", "F", "T", "T", "T", "F",
+        		"F", "T", "T", "F", "T", "F", "F", "T", "T", "F"};
         
         /*calculate score*/
 		ArrayList<Integer> scores = new ArrayList<Integer>();
@@ -78,7 +78,7 @@ public class AnswerController {
 		String time = df.format(new Date());// new Date()为获取当前系统时间，也可使用当前时间戳
 		
 		String student_id = (String) req.get("student");
-		System.out.println(student_id);
+		//System.out.println(student_id);
 		
 		/*check if exist record from same person*/
 		Answer validAnswer = answerService.getValidAnswer(student_id);

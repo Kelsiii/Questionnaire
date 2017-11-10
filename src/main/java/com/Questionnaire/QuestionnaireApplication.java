@@ -12,7 +12,7 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
-/*
+
 @ServletComponentScan
 @SpringBootApplication
 public class QuestionnaireApplication extends SpringBootServletInitializer{  
@@ -28,7 +28,7 @@ public class QuestionnaireApplication extends SpringBootServletInitializer{
     }  
   
 } 
-*/
+/*
 @SpringBootApplication
 public class QuestionnaireApplication {
 	
@@ -37,4 +37,5 @@ public class QuestionnaireApplication {
 		SpringApplication.run(QuestionnaireApplication.class, args);
 	}
 }
+*/
 

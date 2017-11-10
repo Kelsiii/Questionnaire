@@ -818,7 +818,7 @@
 
                     <center>
                         <a class="btn btn-default btn-primary text-center" href="javascript:;" id="submit-btn" role="button">提交问卷</a>
-                        <a class="btn btn-default btn-primary text-center" href="http://localhost:8080/" id="restart-btn" role="button">重新作答</a>
+                        <a class="btn btn-default btn-primary text-center" href="http://grazzh.nju.edu.cn/Questionnaire/" id="restart-btn" role="button">重新作答</a>
                     </center>
                 </div>
             </div>
@@ -963,8 +963,8 @@
             multiple_answer = getCheckboxSelected("multiple-choice")
             judgement_answer = getRadioValue("true-false")
             $.ajax({
-                //url: "http://grazzh.nju.edu.cn/Questionnaire/submit",
-                url: "http://localhost:8080/submit",
+                url: "http://grazzh.nju.edu.cn/Questionnaire/submit",
+                //url: "http://localhost:8080/submit",
                 type: "post",
                 contentType: "application/json",
                 data: JSON.stringify({
@@ -994,7 +994,7 @@
                     checkAnswer = true;
                     markWrongAnswer(wrong_index);
                 } else {
-                    //window.location.href = 'http://grazzh.nju.edu.cn/Questionnaire/';
+                    window.location.href = 'http://grazzh.nju.edu.cn/Questionnaire/';
                     //window.location.href = 'http://localhost:8080/';
                 }
 

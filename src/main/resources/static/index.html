@@ -47,34 +47,42 @@
 </body>
 
 <script type="text/javascript">
+    $(function() {
+        var ua = navigator.userAgent.toLocaleLowerCase();
+        if (/windowswechat/.test(ua)) {
+            window.location.href = 'http://grazzh.nju.edu.cn/Questionnaire/w'
+        }
+
+    })
+
     $("#enter_btn").click(function() {
         $.ajax({
-                url: "http://grazzh.nju.edu.cn/nic_facade/api/auth/getUserInfo",
-                type: "get",
-                xhrFields: {
-                    withCredentials: true
-                 }
-            }).done(function(data) {
-            	console.log(data)
-                if (data.result == 0) {
-                    $.ajax({
-                        url: "http://grazzh.nju.edu.cn/nic_facade/api/app/register?" +
-                      		"token=nju_nic_winsky_2017&name=questionnaire_dev&" +
-                        	"logInUrl=http://localhost:8080/content&" +
-                        	"logOutUrl=http://localhost:8080/",
-                            //"token=nju_nic_winsky_2017&name=questionnaire_prod&" +
-                            //"logInUrl=http://grazzh.nju.edu.cn/Questionnaire/content&" +
-                            //"logOutUrl=http://grazzh.nju.edu.cn/Questionnaire/",
-                        type: "get"
-                    }).done(function(res) {
-                    	console.log(res)
-                        window.location.href = "http://grazzh.nju.edu.cn/nic_facade/auth/login?key=" + res.object
-                    });
-                } else {
-                    //window.location.href = 'http://grazzh.nju.edu.cn/Questionnaire/content'
-                    window.location.href = 'http://localhost:8080/content'
-                }
-            })
+            url: "http://grazzh.nju.edu.cn/nic_facade/api/auth/getUserInfo",
+            type: "get",
+            xhrFields: {
+                withCredentials: true
+            }
+        }).done(function(data) {
+            console.log(data)
+            if (data.result == 0) {
+                $.ajax({
+                    url: "http://grazzh.nju.edu.cn/nic_facade/api/app/register?" +
+                        //"token=nju_nic_winsky_2017&name=questionnaire_dev&" +
+                        //"logInUrl=http://localhost:8080/content&" +
+                        //"logOutUrl=http://localhost:8080/",
+                        "token=nju_nic_winsky_2017&name=questionnaire_prod&" +
+                        "logInUrl=http://grazzh.nju.edu.cn/Questionnaire/content&" +
+                        "logOutUrl=http://grazzh.nju.edu.cn/Questionnaire/",
+                    type: "get"
+                }).done(function(res) {
+                    console.log(res)
+                    window.location.href = "http://grazzh.nju.edu.cn/nic_facade/auth/login?key=" + res.object
+                });
+            } else {
+                window.location.href = 'http://grazzh.nju.edu.cn/Questionnaire/content'
+                    //window.location.href = 'http://localhost:8080/content'
+            }
+        })
     })
 </script>
 
