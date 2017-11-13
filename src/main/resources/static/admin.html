@@ -90,6 +90,8 @@
     $(function() {
         var auth = $.cookie('questionnaire_auth')
         console.log(auth)
+        
+        $.ajaxSetup({ cache: false });          //ajax请求不读取缓存
 
         if (auth == 'true') {
             //初始化Table
