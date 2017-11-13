@@ -5,6 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+
 
     <title>南京大学研究生学术诚信教育问卷</title>
 
@@ -862,7 +865,6 @@
             }
         })
         if (scrollTo != null) {
-            //console.log($('#myTabs a[href="#' + groupName + '"]'))
             $('#myTabs a[href="#' + groupName + '"]').tab('show')
             $('html, body').animate({
                 scrollTop: scrollTo.offset().top
@@ -877,13 +879,10 @@
         var container = $('.tab-content'),
             scrollTo = null;
 
-        //var arr = $.makeArray(container.find($('li')));
         var arr = container.find($('li'))
-
         $.each(arr, function(index, element) {
-            //console.log($(this))
             $(this).find("input").prop('disabled', true)
-            if (wrong_index.includes(index)) {
+            if ($.inArray(index, wrong_index) >= 0) {
                 if (scrollTo == null) {
                     scrollTo = $(this)
                 }
@@ -894,7 +893,6 @@
         })
 
         if (scrollTo != null) {
-            //console.log($('#myTabs a[href="#' + groupName + '"]'))
             if (wrong_index[0] < 10) {
                 groupName = "single-choice"
             } else if (wrong_index[0] < 20) {
@@ -953,7 +951,34 @@
                 withCredentials: true
             }
         }).done(function(res) {
-            studentId = res.object.id;
+            console.log(res)
+            if (res.result == 0) {
+                var ua = navigator.userAgent.toLocaleLowerCase();
+                if (/edge/.test(ua)) {
+                    window.location.href = 'http://grazzh.nju.edu.cn/Questionnaire/w';
+                } else if (window.ActiveXObject || "ActiveXObject" in window) {
+                    window.location.href = 'http://grazzh.nju.edu.cn/Questionnaire/w';
+                } else {
+                    $.ajax({
+                        url: "http://grazzh.nju.edu.cn/nic_facade/api/app/register?" +
+                            //"token=nju_nic_winsky_2017&name=questionnaire_dev&" +
+                            //"logInUrl=http://localhost:8080/content&" +
+                            //"logOutUrl=http://localhost:8080/",
+                            //"token=nju_nic_winsky_2017&name=questionnaire_dev_edge&" +
+                            //"logInUrl=http://192.168.1.102:8080/content&" +
+                            //"logOutUrl=http://192.168.1.102:8080/",
+                            "token=nju_nic_winsky_2017&name=questionnaire_prod&" +
+                            "logInUrl=http://grazzh.nju.edu.cn/Questionnaire/content&" +
+                            "logOutUrl=http://grazzh.nju.edu.cn/Questionnaire/",
+                        type: "get"
+                    }).done(function(res) {
+                        window.location.href = "http://grazzh.nju.edu.cn/nic_facade/auth/login?key=" + res.object
+                    });
+                }
+
+            } else {
+                studentId = res.object.id;
+            }
         });
     })
 
@@ -965,6 +990,7 @@
             $.ajax({
                 url: "http://grazzh.nju.edu.cn/Questionnaire/submit",
                 //url: "http://localhost:8080/submit",
+                //url: "http://192.168.1.102:8080/submit",
                 type: "post",
                 contentType: "application/json",
                 data: JSON.stringify({
@@ -995,7 +1021,6 @@
                     markWrongAnswer(wrong_index);
                 } else {
                     window.location.href = 'http://grazzh.nju.edu.cn/Questionnaire/';
-                    //window.location.href = 'http://localhost:8080/';
                 }
 
             });

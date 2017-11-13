@@ -26,4 +26,9 @@ public class RouterController {
     public String warn() {
         return "warn.html";
     }
+	
+	@RequestMapping("/auth")
+    public String login() {
+        return "login.html";
+    }
 }

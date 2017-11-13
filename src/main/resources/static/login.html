@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+
+
+    <title>南京大学研究生学术诚信教育问卷</title>
+
+    <!---CDN Links-->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="row" style="margin-top:130px;">
+            <div class="col-md-12">
+                <div class="col-md-3"></div>
+                <div class="well col-md-6">
+                    <div class="page-header">
+                        <h3>用户登录</h3>
+                    </div>
+
+                    <form>
+                        <div class="form-group">
+                            <label for="">用户名</label>
+                            <input type="email" class="form-control" id="id" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="">密码</label>
+                            <input type="password" class="form-control" id="pwd" placeholder="">
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input id="remember" type="checkbox"> Remember me </input>
+                            </label>
+                        </div>
+                        <button id="login" type="submit" class="btn btn-default" style="min-width:100px">登陆</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript">
+    $(function() {
+        fillByMemory()
+    })
+
+    $('#login').click(function() {
+        var id = $('#id').val()
+        var pwd = $('#pwd').val()
+        var remember = $('#remember').is(':checked')
+        if (id == "admin" && pwd == "123456") {
+            $.cookie('questionnaire_auth', 'true', {
+                expires: 1
+            });
+            if (remember) {
+                rememberMe()
+            }
+            //window.location.href = 'http://grazzh.nju.edu.cn/Questionnaire/dashboard';
+            window.location.href = 'http://localhost:8080/dashboard';
+        } else {
+            alert("用户名／密码错误")
+            $('#id').val('');
+            $('#pwd').val('');
+        }
+    })
+
+    function rememberMe() {
+        $.cookie('questionnaire_id', $('#id').val());
+        $.cookie('questionnaire_pwd', $('#pwd').val());
+
+    }
+
+    function fillByMemory() {
+        if (!!$.cookie('questionnaire_id'))
+            $('#id').val($.cookie('questionnaire_id'));
+
+        if (!!$.cookie('questionnaire_pwd'))
+            $('#pwd').val($.cookie('questionnaire_pwd'));
+    }
+</script>
+
+</html>
