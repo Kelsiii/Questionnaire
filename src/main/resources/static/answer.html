@@ -13,38 +13,25 @@
 
     <!---CDN Links-->
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://grazzh.nju.edu.cn/Questionnaire/css/main.css">
+    <!-- link rel="stylesheet" href="css/main.css" -->
 
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.4/jquery.xdomainrequest.min.js"></script>
     <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <style>
-        .sc-tabs .nav-tabs {
-            margin-bottom: 15px;
-        }
-        
-        .sc-tabs label {
-            margin-bottom: 10px;
-        }
-        
-        .footer {
-            border-top: 1px solid #eee;
-            padding-top: 9px;
-            margin: 40px 0 20px;
-            color: #c5c5c5
-        }
-        
-        #true-false .radio-inline {
-            margin-right: 2em
-        }
-    </style>
-
 </head>
 
 <body>
+    <div class="head">
+
+    </div>
     <div class="container">
-        <h1>南京大学研究生学术诚信教育问卷</h1>
+        <div class="container-header">
+            <h2 class="title">南京大学研究生学术诚信教育问卷</h2>
+
+        </div>
 
         <!-- Nav tabs -->
         <div class="sc sc-tabs" data-example-id="togglable-tabs">
@@ -284,12 +271,13 @@
                     </form>
 
                     <center>
-                        <a class="btn btn-default btn-primary text-center" href="javascript:;" id="btn-to-multiple" role="button">下一部分</a>
+                        <a class="btn btn-nju text-center" href="javascript:;" id="btn-to-multiple" role="button">下一部分</a>
                     </center>
                 </div>
                 <div role="tabpanel" class="tab-pane" id="multiple-choice">
 
-                    <p style="padding-left:25px">每题至少选择两项正确答案</p>
+                    <p style="padding-left:25px;color: #9d41a5">
+                        注意：每题至少选择两项正确答案</p>
                     <form>
                         <ol>
                             <li for="multiple-choice" index="11">
@@ -611,7 +599,7 @@
                         </ol>
                     </form>
                     <center>
-                        <a class="btn btn-default btn-primary text-center" href="javascript:;" id="btn-to-judgement" role="button">下一部分</a>
+                        <a class="btn btn-nju text-center" href="javascript:;" id="btn-to-judgement" role="button">下一部分</a>
                     </center>
                 </div>
                 <div role="tabpanel" class="tab-pane" id="true-false">
@@ -821,18 +809,18 @@
                     </form>
 
                     <center>
-                        <a class="btn btn-default btn-primary text-center" href="javascript:;" id="submit-btn" role="button">提交问卷</a>
-                        <a class="btn btn-default btn-primary text-center" href="http://grazzh.nju.edu.cn/Questionnaire/" id="restart-btn" role="button">重新作答</a>
+                        <a class="btn btn-nju text-center" href="javascript:;" id="submit-btn" role="button">提交问卷</a>
+                        <a class="btn btn-nju text-center" href="http://grazzh.nju.edu.cn/Questionnaire/" id="restart-btn" role="button">重新作答</a>
                     </center>
                 </div>
             </div>
         </div>
 
-        <div class="footer">
-            <center>
-                <p>南京大学</p>
-            </center>
-        </div>
+    </div>
+    <div class="footer">
+        <p>
+            通信地址：南京市仙林大道163号，南京大学研究生院 邮政编码：210046
+        </p>
     </div>
 
 
@@ -945,7 +933,9 @@
     $(function() {
         $("#submit-btn").show();
         $("#restart-btn").hide();
-        $.ajaxSetup({ cache: false });          //ajax请求不读取缓存
+        $.ajaxSetup({
+            cache: false
+        }); //ajax请求不读取缓存
         $.ajax({
             url: "http://grazzh.nju.edu.cn/nic_facade/api/auth/getUserInfo",
             type: "get",

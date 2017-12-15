@@ -12,6 +12,8 @@
 
     <!---CDN Links-->
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://grazzh.nju.edu.cn/Questionnaire/css/main.css">
+    <!--link rel="stylesheet" href="css/main.css"-->
 
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.4/jquery.xdomainrequest.min.js"></script>
@@ -20,13 +22,17 @@
     <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+
 </head>
 
 
 <body>
+    <div class="head">
+
+    </div>
     <div class="container">
         <div class="page-header">
-            <h1>南京大学研究生学术诚信教育问卷</h1>
+            <h2 class="title">南京大学研究生学术诚信教育问卷</h2>
         </div>
 
         <div class="panel panel-default">
@@ -46,7 +52,7 @@
             </div>
         </div>
         <center>
-            <a class="btn btn-default text-center" id="enter_btn" href="javascript:;" role="button">进入问卷</a>
+            <a class="btn btn-nju text-center" id="enter_btn" href="javascript:;" role="button">进入问卷</a>
         </center>
     </div>
 </body>
@@ -62,8 +68,10 @@
         if (/windowswechat/.test(ua)) {
             window.location.href = 'http://grazzh.nju.edu.cn/Questionnaire/w'
         }*/
-        
-        $.ajaxSetup({ cache: false });          //ajax请求不读取缓存
+
+        $.ajaxSetup({
+            cache: false
+        }); //ajax请求不读取缓存
 
         $.ajax({
             url: "http://grazzh.nju.edu.cn/nic_facade/api/auth/getUserInfo",
