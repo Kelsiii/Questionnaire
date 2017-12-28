@@ -18,14 +18,14 @@
     <link href="https://cdn.bootcss.com/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker3.min.css" rel="stylesheet">
 
 
-    <link rel="stylesheet" href="http://grazzh.nju.edu.cn/Questionnaire/css/dragtable.css">
+    <link rel="stylesheet" href="css/dragtable.css">
 
 
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 
-    <script src="http://grazzh.nju.edu.cn/Questionnaire/scripts/tableExport/tableExport.js"></script>
-    <script src="http://grazzh.nju.edu.cn/Questionnaire/scripts/moment/moment.js"></script>
+    <script src="scripts/tableExport/tableExport.js"></script>
+    <script src="scripts/moment/moment.js"></script>
 
 
     <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
@@ -38,7 +38,7 @@
     <script src="https://cdn.bootcss.com/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap-datepicker/1.7.1/locales/bootstrap-datepicker.zh-CN.min.js"></script>
 
-    <script src="http://grazzh.nju.edu.cn/Questionnaire/scripts/dragtable/jquery.dragtable.js"></script>
+    <script src="scripts/dragtable/jquery.dragtable.js"></script>
 
     <style>
         .fixed-table-pagination {
@@ -90,8 +90,10 @@
     $(function() {
         var auth = $.cookie('questionnaire_auth')
         console.log(auth)
-        
-        $.ajaxSetup({ cache: false });          //ajax请求不读取缓存
+
+        $.ajaxSetup({
+            cache: false
+        }); //ajax请求不读取缓存
 
         if (auth == 'true') {
             //初始化Table
@@ -102,8 +104,7 @@
             DateSelectorInit();
 
         } else {
-            window.location.href = 'http://grazzh.nju.edu.cn/Questionnaire/auth';
-            //window.location.href = 'http://localhost:8080/auth';
+            window.location.href = 'http://localhost:8080/auth';
         }
 
     });
@@ -122,7 +123,7 @@
         filter.date_from = $("#date-from").val();
         filter.date_to = $("#date-to").val();
         $.ajax({
-            url: "http://grazzh.nju.edu.cn/Questionnaire/getScores",
+            url: "http://localhost:8080/getScores",
             type: "post",
             contentType: "application/json",
             data: JSON.stringify({
@@ -139,7 +140,7 @@
         filter.department = department;
 
         $.ajax({
-            url: "http://grazzh.nju.edu.cn/Questionnaire/getScores",
+            url: "http://localhost:8080/getScores",
             type: "post",
             contentType: "application/json",
             data: JSON.stringify({
@@ -156,7 +157,7 @@
         var score_filter = $(this).val()
         filter.score = score_filter;
         $.ajax({
-            url: "http://grazzh.nju.edu.cn/Questionnaire/getScores",
+            url: "http://localhost:8080/getScores",
             type: "post",
             contentType: "application/json",
             data: JSON.stringify({
@@ -171,7 +172,7 @@
 
     function DepartmentSelectInit() {
         $.ajax({
-            url: "http://grazzh.nju.edu.cn/Questionnaire/getDepartments",
+            url: "http://localhost:8080/getDepartments",
             type: "get",
             contentType: "application/json"
         }).done(function(res) {
@@ -210,7 +211,7 @@
 
         oTableInit.Init = function() {
             $("#tb_scores").bootstrapTable({
-                url: 'http://grazzh.nju.edu.cn/Questionnaire/getAllScores', //url获取数据 
+                url: 'http://localhost:8080/getAllScores', //url获取数据 
                 method: 'get', //方法 
                 cache: false, //缓存 
                 pagination: true, //分页 

@@ -61,15 +61,14 @@
         var id = $('#id').val()
         var pwd = $('#pwd').val()
         var remember = $('#remember').is(':checked')
-        if (id == "admin" && pwd == "******") {
+        if (id == "admin" && pwd == "123456") {
             $.cookie('questionnaire_auth', 'true', {
                 expires: 1
             });
             if (remember) {
                 rememberMe()
             }
-            window.location.href = 'http://grazzh.nju.edu.cn/Questionnaire/dashboard';
-            //window.location.href = 'http://localhost:8080/dashboard';
+            window.location.href = 'http://localhost:8080/dashboard';
         } else {
             alert("用户名／密码错误")
             $('#id').val('');

@@ -12,7 +12,7 @@
 
     <!---CDN Links-->
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://grazzh.nju.edu.cn/Questionnaire/css/main.css">
+    <link rel="stylesheet" href="css/main.css">
     <!--link rel="stylesheet" href="css/main.css"-->
 
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
@@ -98,23 +98,15 @@
             if (data.result == 0) {
                 $.ajax({
                     url: "http://grazzh.nju.edu.cn/nic_facade/api/app/register?" +
-                        //"token=nju_nic_winsky_2017&name=questionnaire_dev&" +
-                        //"logInUrl=http://localhost:8080/content&" +
-                        //"logOutUrl=http://localhost:8080/",
-                        //"token=nju_nic_winsky_2017&name=questionnaire_dev_edge&" +
-                        //"logInUrl=http://192.168.1.102:8080/content&" +
-                        //"logOutUrl=http://192.168.1.102:8080/",
-                        "token=nju_nic_winsky_2017&name=questionnaire_prod&" +
-                        "logInUrl=http://grazzh.nju.edu.cn/Questionnaire/content&" +
-                        "logOutUrl=http://grazzh.nju.edu.cn/Questionnaire/",
+                        "token=nju_nic_winsky_2017&name=questionnaire_dev&" +
+                        "logInUrl=http://localhost:8080/content&" +
+                        "logOutUrl=http://localhost:8080/",
                     type: "get"
                 }).done(function(res) {
                     window.location.href = "http://grazzh.nju.edu.cn/nic_facade/auth/login?key=" + res.object
                 });
             } else {
-                window.location.href = 'http://grazzh.nju.edu.cn/Questionnaire/content'
-                    //window.location.href = 'http://localhost:8080/content'
-                    //window.location.href = 'http://192.168.1.102:8080/content'
+                window.location.href = 'http://localhost:8080/content'
             }
         })
     })

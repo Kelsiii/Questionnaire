@@ -13,8 +13,7 @@
 
     <!---CDN Links-->
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://grazzh.nju.edu.cn/Questionnaire/css/main.css">
-    <!-- link rel="stylesheet" href="css/main.css" -->
+    <link rel="stylesheet" href="css/main.css">
 
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.4/jquery.xdomainrequest.min.js"></script>
@@ -955,15 +954,10 @@
                 } else {
                     $.ajax({
                         url: "http://grazzh.nju.edu.cn/nic_facade/api/app/register?" +
-                            //"token=nju_nic_winsky_2017&name=questionnaire_dev&" +
-                            //"logInUrl=http://localhost:8080/content&" +
-                            //"logOutUrl=http://localhost:8080/",
-                            //"token=nju_nic_winsky_2017&name=questionnaire_dev_edge&" +
-                            //"logInUrl=http://192.168.1.102:8080/content&" +
-                            //"logOutUrl=http://192.168.1.102:8080/",
-                            "token=nju_nic_winsky_2017&name=questionnaire_prod&" +
-                            "logInUrl=http://grazzh.nju.edu.cn/Questionnaire/content&" +
-                            "logOutUrl=http://grazzh.nju.edu.cn/Questionnaire/",
+                            "token=nju_nic_winsky_2017&name=questionnaire_dev&" +
+                            "logInUrl=http://localhost:8080/content&" +
+                            "logOutUrl=http://localhost:8080/",
+
                         type: "get"
                     }).done(function(res) {
                         window.location.href = "http://grazzh.nju.edu.cn/nic_facade/auth/login?key=" + res.object
@@ -983,9 +977,7 @@
             multiple_answer = getCheckboxSelected("multiple-choice")
             judgement_answer = getRadioValue("true-false")
             $.ajax({
-                url: "http://grazzh.nju.edu.cn/Questionnaire/submit",
-                //url: "http://localhost:8080/submit",
-                //url: "http://192.168.1.102:8080/submit",
+                url: "http://localhost:8080/submit",
                 type: "post",
                 contentType: "application/json",
                 data: JSON.stringify({
@@ -1015,7 +1007,7 @@
                     checkAnswer = true;
                     markWrongAnswer(wrong_index);
                 } else {
-                    window.location.href = 'http://grazzh.nju.edu.cn/Questionnaire/';
+                    window.location.href = 'http://localhost:8080/';
                 }
 
             });
